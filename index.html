@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DARKROOM.DEV</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background: #08060C;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+      }
+      canvas { display: block; image-rendering: pixelated; }
+    </style>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <video id="scare-video" src="/video/jumpscare.mp4" playsinline
+      style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:#000;object-fit:cover;cursor:none;"></video>
+
+    <div id="thankyou-screen" style="
+      display:none;
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(8,6,12,0.98);
+      z-index:998;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      font-family:'Courier New',monospace;
+      color:#F0EBF8;
+      text-align:center;
+    ">
+      <div style="font-size:52px;margin-bottom:24px;">🤖</div>
+      <h1 style="font-size:26px;color:#F59E0B;letter-spacing:6px;margin-bottom:16px;font-weight:bold;font-family:'Courier New',monospace;">THANK YOU.</h1>
+      <p style="font-size:11px;opacity:0.38;line-height:2;margin-bottom:52px;">
+        You searched in the dark.<br>
+        You found what was hidden.<br>
+        Now you can't unsee it.
+      </p>
+      <div style="display:flex;gap:24px;">
+        <button id="btn-replay" style="
+          background:transparent;
+          border:1px solid rgba(245,158,11,0.55);
+          color:rgba(245,158,11,0.85);
+          font-family:'Courier New',monospace;
+          font-size:12px;letter-spacing:2px;
+          padding:13px 30px;cursor:pointer;
+        ">[ PLAY AGAIN ]</button>
+        <button id="btn-share" style="
+          background:transparent;
+          border:1px solid rgba(240,235,248,0.22);
+          color:rgba(240,235,248,0.45);
+          font-family:'Courier New',monospace;
+          font-size:12px;letter-spacing:2px;
+          padding:13px 30px;cursor:pointer;
+        ">[ SHARE ON X ]</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
